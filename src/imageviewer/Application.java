@@ -77,7 +77,13 @@ public class Application extends JFrame {
 
     private ActionListener doCommand(final String operation) {
         return (ActionEvent e) -> {
+            update();
             commands.get(operation).execute();
         };
+    }
+
+    private void update() {
+        this.setExtendedState(MAXIMIZED_BOTH);
+        this.setLocationRelativeTo(null);
     }
 }
